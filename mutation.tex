@@ -1,38 +1,37 @@
 %mutation.tex
-\documentclass[oneside]{book}
+\documentclass[oneside,draft]{book}
 
 \usepackage[utf8]{inputenc}
-\usepackage{makeidx}
 
-\usepackage[CJKaddspaces,CJKchecksingle,CJKnumber]{xeCJK}
-\punctstyle{CCT}
-\xeCJKnobreakbetweenpuncts
-\setCJKmainfont{WenQuanYi Micro Hei}
-
-\author{亞首}
-\title{突變}
-\date{2011}
-
-\makeindex
-
-\renewcommand{\contentsname}{目錄}
-\renewcommand{\chaptername}{第\CJKnumber{\thechapter}章}
-\renewcommand{\figurename}{圖}
-\renewcommand{\tablename}{表}
-\renewcommand{\bibname}{參考及引用出處}
-\renewcommand{\appendixname}{附錄}
-\renewcommand{\indexname}{索引}
-
+\input{metainfo}
 
 \begin{document}
+%\begin{CJK}
 
-\maketitle
+
+\frontmatter
+\input{titlepage}
 \include{thepoematfirst}
-
+\include{thebeginning2}
 \tableofcontents
 
-\include{thebeginning2}
+\mainmatter
 \include{chap1}
+\include{chap2}
+\include{chap3}
+\include{chap4}
+
+
+\backmatter
+\include{leftover}
+
+\include{postscript}
+\include{qa}
+
+
+\refstepcounter{chapter}
 
 \printindex
+
+%\end{CJK}
 \end{document}

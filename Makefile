@@ -5,7 +5,8 @@ MAINSOURCE = mutation.tex
 INDEXFILE = $(MAINSOURCE:.tex=.idx)
 TARGET = $(MAINSOURCE:.tex=.pdf)
 
-mutation: $(SOURCES)
+.PHONY : $(TARGET)
+$(TARGET): $(SOURCES)
 	$(TEX) $(MAINSOURCE)
 
 index: $(INDEXFILE)
