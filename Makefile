@@ -15,8 +15,13 @@ index: $(INDEXFILE)
 view: $(TARGET)
 	evince $<
 
+full:
+	@echo do what?
+
 .PHONY : clean
+.SILENCE : clean
 clean:
 	/bin/rm -f  *.dvi *.log *.aux *~ *.fdb_latexmk \
-                    *.pdf *.toc *.ind *.idx *.ilg *.lof *.lot
+                    *.pdf *.toc *.ind *.idx *.ilg *.lof *.lot \
+                    *.xdv *.blg *.bbl
 
