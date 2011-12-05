@@ -3,22 +3,24 @@
 
 \usepackage[utf8]{inputenc}
 
-\title{突變}
+\title{\Huge{}突變}
 \author{亞首}
 \date{2011}
 
 \input{metainfo}
 
 \begin{document}
-%\begin{CJK}
+\begin{CJK}{UTF8}{bsmi}%{bsmi}
 
 \frontmatter
-\input{titlepage}
+\maketitle
+
 \include{thepoematfirst}
-\include{thebeginning2}
+\include{preface2ed}
 \tableofcontents
 
 \mainmatter
+\renewcommand\chaptermark[1]{\markright{\kai \chaptername~ #1}{}}
 \include{chap1}
 \include{chap2}
 \include{chap3}
@@ -35,5 +37,5 @@
 \printindex
 
 \newpage
-%\end{CJK}
+\end{CJK}
 \end{document}

@@ -1,22 +1,37 @@
-TEX = xelatex
+TEX := latex
+DVI2PDF := dvipdfm
+MKIDX := makeindex
+PDFTEX := pdflatex
 
 SOURCES = $(wildcard *.tex)
-MAINSOURCE = mutation.tex
-INDEXFILE = $(MAINSOURCE:.tex=.idx)
-TARGET = $(MAINSOURCE:.tex=.pdf)
+TEXFILE = mutation.tex
 
-.PHONY : $(TARGET)
-$(TARGET): $(SOURCES)
-	$(TEX) $(MAINSOURCE)
+IDXFILE = $(TEXFILE:.tex=.idx)
+DVIFILE = $(TEXFILE:.tex=.dvi)
+PDFFILE = $(TEXFILE:.tex=.pdf)
 
-index: $(INDEXFILE)
-	makeindex $<
+all: $(PDFFILE)
 
-view: $(TARGET)
+
+.PHONY : $(DVIFILE)
+$(DVIFILE): $(TEXFILE) $(SOURCES)
+	$(TEX) $(TEXFILE)
+
+directPDF: $(TEXFILE)
+	$(PDFTEX) $<
+
+$(PDFFILE): $(DVIFILE)
+	$(DVI2PDF) $<
+
+full: $(DVIFILE) index $(DVIFILE) $(PDFFILE)
+
+
+index: $(IDXFILE)
+	$(MKIDX) $<
+
+view: $(PDFFILE)
 	evince $<
 
-full:
-	@echo do what?
 
 .PHONY : clean
 .SILENCE : clean
