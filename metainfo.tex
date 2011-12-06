@@ -1,20 +1,23 @@
 \usepackage{makeidx}
 \makeindex
 
+
 % prepare CJK support
 \usepackage{CJKutf8}
 \usepackage{CJKnumb}
 \usepackage{CJKspace}
 \usepackage{indentfirst}
+
 % Chinese font setting
 \newcommand{\smi}{\CJKfamily{bsmi}}
 \newcommand{\kai}{\CJKfamily{bkai}}
 
 
 % hyperref setting
-\usepackage[bookmarksnumbered,dvipdfm,
+\usepackage[
+        bookmarks,bookmarksnumbered,dvipdfm,
         unicode,
-        breaklinks,colorlinks,linkcolor=blue,urlcolor=blue
+        breaklinks,colorlinks,
         pdfauthor={Shou Ya},pdftitle={Mutation},
  ]{hyperref}
 
@@ -25,8 +28,9 @@
 % set fit chapter name display
 \usepackage{titlesec}
 \titleformat{\chapter}{\huge\kai}{\chaptername}{1em}{\textbf}
-\renewcommand\chaptermark[1]{\markright{\chaptername~ #1}{}}
+\renewcommand\chaptermark[1]{\markright{\kai \chaptername~ #1}{}}
 
+% renames
 \renewcommand{\contentsname}{目錄}
 \renewcommand{\chaptername}{第\CJKnumber{\thechapter}章}
 \renewcommand{\figurename}{圖}

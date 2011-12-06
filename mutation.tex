@@ -1,5 +1,5 @@
 %mutation.tex
-\documentclass[oneside]{book}
+\documentclass[oneside,11pt]{book}
 
 \usepackage[utf8]{inputenc}
 
@@ -10,17 +10,17 @@
 \input{metainfo}
 
 \begin{document}
-\begin{CJK}{UTF8}{bsmi}%{bsmi}
+\begin{CJK}{UTF8}{bsmi}
 
 \frontmatter
 \maketitle
 
+\include{declaration}
 \include{thepoematfirst}
 \include{preface2ed}
 \tableofcontents
 
 \mainmatter
-\renewcommand\chaptermark[1]{\markright{\kai \chaptername~ #1}{}}
 \include{chap1}
 \include{chap2}
 \include{chap3}
