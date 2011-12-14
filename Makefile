@@ -38,5 +38,5 @@ view: $(PDFFILE)
 clean:
 	/bin/rm -f  *.dvi *.log *.aux *~ *.fdb_latexmk \
                     *.pdf *.toc *.ind *.idx *.ilg *.lof *.lot \
-                    *.xdv *.blg *.bbl
+                    *.xdv *.blg *.bbl *.out
 
